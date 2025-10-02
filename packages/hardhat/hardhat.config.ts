@@ -21,6 +21,21 @@ const deployerPrivateKey =
 const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
 
 const config: HardhatUserConfig = {
+  etherscan: {
+    apiKey: {
+      liskSepolia: process.env.ETHERSCAN_API_KEY || "YOUR_BLOCKSCOUT_API_KEY",
+    },
+    customChains: [
+      {
+        network: "liskSepolia",
+        chainId: 4202,
+        urls: {
+          apiURL: "https://sepolia-blockscout.lisk.com/api",
+          browserURL: "https://sepolia-blockscout.lisk.com",
+        },
+      },
+    ],
+  },
   solidity: {
     version: "0.8.17",
     settings: {
@@ -31,7 +46,7 @@ const config: HardhatUserConfig = {
       },
     },
   },
-  defaultNetwork: "localhost",
+  defaultNetwork: "liskSepolia",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -130,6 +145,7 @@ const config: HardhatUserConfig = {
     liskSepolia: {
       url: "https://rpc.sepolia-api.lisk.com",
       accounts: [deployerPrivateKey],
+      chainId: 4202,
     },
     mode: {
       url: "https://mainnet.mode.network",
@@ -154,5 +170,4 @@ const config: HardhatUserConfig = {
     enabled: false,
   },
 };
-
 export default config;
