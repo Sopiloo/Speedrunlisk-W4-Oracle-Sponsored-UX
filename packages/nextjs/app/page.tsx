@@ -1,30 +1,39 @@
 "use client";
 
+// import { useState } from "react";
 import type { NextPage } from "next";
-import { NFTCollection } from "~~/components/example-ui/NFTCollection";
-import { TokenBalance } from "~~/components/example-ui/TokenBalance";
-import { TokenTransfer } from "~~/components/example-ui/TokenTransfer";
+import { useAccount } from "wagmi";
+import { PriceDisplay } from "~~/components/example-ui/PriceDisplay";
 
-const Home: NextPage = () => {
-  return (
-    <>
-      <div className="flex items-center flex-col flex-grow pt-10">
-        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center items-center gap-6 flex-col sm:flex-row">
-            <div className="flex flex-col px-10 py-10 text-center items-center rounded-3xl">
-              <TokenBalance />
-            </div>
-            <div className="flex flex-col px-10 py-10 text-center items-center rounded-3xl">
-              <TokenTransfer />
-            </div>
-            <div className="flex flex-col px-10 py-10 text-center items-center rounded-3xl">
-              <NFTCollection />
-            </div>
+const Oracle: NextPage = () => {
+  const { isConnected } = useAccount();
+
+  if (!isConnected) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card-body text-center">
+            <h2 className="card-title justify-center">Oracle Price Feeds</h2>
+            <p>Please connect your wallet to view live prices</p>
           </div>
         </div>
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-center mb-4">🔮 Live Price Feeds</h1>
+        <p className="text-center text-gray-600">Real-time cryptocurrency prices powered by RedStone Oracle</p>
+      </div>
+
+      <div className="flex justify-center items-center gap-6 flex-col sm:flex-row">
+        <PriceDisplay symbol="ETH" />
+        <PriceDisplay symbol="BTC" />
+      </div>
+    </div>
   );
 };
 
-export default Home;
+export default Oracle;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Contract as EthersContract } from "@ethersproject/contracts";
 import { WrapperBuilder } from "@redstone-finance/evm-connector";
 import { getSignersForDataServiceId } from "@redstone-finance/sdk";
 import { ethers } from "ethers";
@@ -38,8 +39,8 @@ export const PriceDisplay = ({ symbol }: PriceDisplayProps) => {
       // Create ethers provider from window.ethereum
       const provider = new ethers.providers.Web3Provider(window.ethereum as any);
 
-      // Create ethers contract instance
-      const contract = new ethers.Contract(deployedContractData.address, deployedContractData.abi, provider);
+      // Create contract instance using @ethersproject/contracts to align types
+      const contract = new EthersContract(deployedContractData.address, deployedContractData.abi as any, provider);
 
       // Wrap contract with RedStone data using correct API
       const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({

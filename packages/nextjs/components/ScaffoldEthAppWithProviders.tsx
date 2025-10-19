@@ -12,7 +12,6 @@ import { BlockieAvatar } from "~~/components/scaffold-eth";
 import { ProgressBar } from "~~/components/scaffold-eth/ProgressBar";
 import { useNativeCurrencyPrice } from "~~/hooks/scaffold-eth";
 import { useGlobalState } from "~~/services/store/store";
-import { thirdwebClient } from "~~/services/web3/thirdwebConfig";
 import { wagmiConfig } from "~~/services/web3/wagmiConfig";
 import { appChains } from "~~/services/web3/wagmiConnectors";
 
@@ -47,10 +46,9 @@ export const ScaffoldEthAppWithProviders = ({ children }: { children: React.Reac
     setMounted(true);
   }, []);
 
-   return (
+  return (
     <ThirdwebProvider>
       {" "}
-      {/* ✅ Wrap everything with ThirdwebProvider */}
       <WagmiConfig config={wagmiConfig}>
         <ProgressBar />
         <RainbowKitProvider

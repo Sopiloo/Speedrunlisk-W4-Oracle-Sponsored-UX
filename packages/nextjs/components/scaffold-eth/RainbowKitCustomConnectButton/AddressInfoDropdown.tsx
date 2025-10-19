@@ -1,6 +1,7 @@
+"use client";
+
 import { useRef, useState } from "react";
 import { NetworkOptions } from "./NetworkOptions";
-import CopyToClipboard from "react-copy-to-clipboard";
 import { getAddress } from "viem";
 import { Address, useDisconnect } from "wagmi";
 import {
@@ -12,6 +13,7 @@ import {
   DocumentDuplicateIcon,
   QrCodeIcon,
 } from "@heroicons/react/24/outline";
+import CopyToClipboard from "~~/components/CopyWrapper";
 import { BlockieAvatar, isENS } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 import { getTargetNetworks } from "~~/utils/scaffold-eth";

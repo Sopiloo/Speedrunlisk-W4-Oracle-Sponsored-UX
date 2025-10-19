@@ -286,7 +286,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     MyNFT: {
-      address: "0x5F1720F1AEcA27b6d26673417D519b89178Ab219",
+      address: "0x08Cbf2fB1591FC4012Bd3d11a6a7F7C84360F73A",
       abi: [
         {
           inputs: [],
@@ -666,7 +666,7 @@ const deployedContracts = {
       },
     },
     MyToken: {
-      address: "0x8f7D3db4F8dD39e48bf88952c7C5a5786689726A",
+      address: "0x9561952741500A0C7FEc58C48769EE48aab58973",
       abi: [
         {
           inputs: [],
@@ -1211,22 +1211,17 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {
-        aggregateValues:
-          "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
+        aggregateValues: "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
         extractTimestampsAndAssertAllAreEqual:
           "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
-        getAuthorisedSignerIndex:
-          "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
-        getDataServiceId:
-          "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
-        getUniqueSignersThreshold:
-          "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
-        validateTimestamp:
-          "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
+        getAuthorisedSignerIndex: "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
+        getDataServiceId: "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
+        getUniqueSignersThreshold: "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
+        validateTimestamp: "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol",
       },
     },
     VNDToken: {
-      address: "0xe2ee7D2070cA6d77A6788f0EF98D2ac8A4Ce254c",
+      address: "0xe5E1c8a5a670Eb23B9EA75D939a252c760f298bB",
       abi: [
         {
           inputs: [],
@@ -1706,7 +1701,7 @@ const deployedContracts = {
       },
     },
     YourContract: {
-      address: "0x2FE1a6d58E8A56F203096Ef328d6514E1f8b0Bb8",
+      address: "0xBe9bcDdfb66795B951297f1Bcf83F5E9DfbE1fc9",
       abi: [
         {
           inputs: [
